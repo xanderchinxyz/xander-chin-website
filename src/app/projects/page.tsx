@@ -10,7 +10,7 @@ export default function Projects() {
                 <div>
                     <h2 className="font-bold text-xl">Voice Assistant Camera Wearable</h2>
                     <p className="italic">June 2024</p>
-                    <a href="">Part 2 GitHub Repo</a> | <a href="">Part 1 GitHub Repo</a>
+                    <a href="https://github.com/xanderchinxyz/ESP32-CAM-Semantic-Search" target="_blank">Part 1 GitHub Repo</a> | <a href="https://github.com/xanderchinxyz/Voice-Assistant-Camera-Wearable" target="_blank">Part 2 GitHub Repo</a>
                     <ul className="list-disc pl-8">
                         <li>Built a clip-on device to turn any pair of glasses into smart glasses with a voice assistant built with a XIAO ESP32 S3 Sense board. Originally started out as a separate device built with an ESP32-CAM and Muse 2 headset</li>
                         <li>Used a local multimodal large language model, Groq with RAG, and VOSK speech recognition model. First part only used text and image embeddings.</li>
@@ -46,7 +46,7 @@ export default function Projects() {
             <div className="mb-6">
                 <h2 className="font-bold text-xl">Ping Pong LED Walls</h2>
                 <p className="italic">Mar 2024</p>
-                <a href="">Part 1 Writeup</a> | <a href="">Part 2 Writeup</a>
+                <a href="/DER.pdf#page=231" target="_blank">Part 1 Writeup</a> | <a href="/DER.pdf#page=275" target="_blank">Part 2 Writeup</a>
                 <ul className="list-disc pl-8">
                     <li>
                         Part 1 (Feb 2022): Built a lightweight LED Wall with 24 by 32 resolution. I designed the PCBs to be modular, lightweight and cheap
@@ -60,9 +60,9 @@ export default function Projects() {
                     </li>
                     <li>
                         V2 (Mar 2024): Updated the previous Ping Pong LED Wall design to be a smaller and more modular IoT version with 3D printed clip on pieces, solderable connector PCBs, 
-                        and cool effects that can be controlled over Wi-Fi using the <a href="">WLED app</a>.
+                        and cool effects that can be controlled over Wi-Fi using the <a href="https://kno.wled.ge/" target="_blank">WLED app</a>.
                     </li>
-                    <li>Inspired by <a href="https://github.com/BasedHardware/OpenGlass" target="_blank">Bitluni's Ping Pong LED Wall</a>.</li>
+                    <li>Inspired by <a href="https://youtu.be/EZEMK-C-nSo" target="_blank">Bitluni's Ping Pong LED Wall</a>.</li>
                 </ul>
                 <div className="flex flex-wrap">
                     <div className="portrait-container">
@@ -109,7 +109,7 @@ export default function Projects() {
             <div className="mb-6">
                 <h2 className="font-bold text-xl">EEG + EMG Measurement Device</h2>
                 <p className="italic">Dec 2021</p>
-                <a href="">Writeup</a>
+                <a href="/DER.pdf#page=199" target="_blank">Writeup</a>
                 <ul className="list-disc pl-8">
                     <li>
                         Built a 2 channel electroencephalography (EEG) and electromyography (EMG) reader to "mind control" devices.
@@ -153,7 +153,7 @@ export default function Projects() {
             <div className="mb-6">
                 <h2 className="font-bold text-xl">Custom 4-Bit Computer (CHUMP)</h2>
                 <p className="italic">Nov 2021</p>
-                <a href="">Part 2 Writeup</a> | <a href="">Part 1 Writeup</a>
+                <a href="/DER.pdf#page=164" target="_blank">Part 1 Writeup</a> | <a href="/DER.pdf#page=175" target="_blank">Part 2 Writeup</a>
                 <ul className="list-disc pl-8">
                     <li>
                         Part 1: The beginning of a 4-bit breadboard computer called CHUMP (Cheap Homemade Understandable Minimal Processor). The first part goes over the custom "Chumpanese" code to
@@ -193,7 +193,7 @@ export default function Projects() {
             <div className="mb-6">
                 <h2 className="font-bold text-xl">IR Nixie Clock</h2>
                 <p className="italic">May 2021</p>
-                <a href="">Writeup</a>
+                <a href="/DER.pdf#page=132" target="_blank">Writeup</a>
                 <ul className="list-disc pl-8">
                     <li>
                         A 4-digit nixie tube clock with alarm, timer, date, and temperature features controlled with an infrared remote.
@@ -237,7 +237,7 @@ export default function Projects() {
             <div className="mb-6">
                 <h2 className="font-bold text-xl">LiDAR Measurement and Mapping Device</h2>
                 <p className="italic">Mar 2021</p>
-                <a href="">Writeup</a>
+                <a href="/DER.pdf#page=90" target="_blank">Writeup</a>
                 <ul className="list-disc pl-8">
                     <li>
                         A device that measures distance and models the surrounding room using LiDAR, servo motors, and an ESP32 programmed in C++.
