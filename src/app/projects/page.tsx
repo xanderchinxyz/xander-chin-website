@@ -264,7 +264,7 @@ export default function Projects() {
                         <p>Starting a real-time scan to create a 3D point cloud</p>
                     </div>
                     <div className="landscape-container">
-                        <img src="LiDAR/device.jpg" alt="" className="w-[400px]"></img>
+                        <img src="LiDAR/device.jpg" alt="" className="w-[400px] mb-[1px]"></img>
                         <p>The LiDAR Measurement Device consisting of the control unit and LiDAR unit</p>
                     </div>
                 </div>
