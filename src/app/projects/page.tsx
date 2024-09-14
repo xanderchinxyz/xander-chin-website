@@ -176,15 +176,15 @@ export default function Projects() {
                         <p>Part 2 Video</p>
                     </div>
                     <div className="landscape-container">
-                        <img src="/CHUMP/code-clock-counter.jpg" alt="" className="w-[400px]"></img>
+                        <img src="/CHUMP/code-clock-counter.jpg" alt="" className="w-[400px] mb-[1px]"></img>
                         <p>The Code (stored in the EEPROM Program), Clock (555 timers) and Program Counter (PC) sections</p>
                     </div>
                     <div className="landscape-container">
-                        <img src="/CHUMP/complete-chump.jpg" alt="" className="w-[400px]"></img>
+                        <img src="/CHUMP/complete-chump.jpg" alt="" className="w-[400px] mb-[1px]"></img>
                         <p>The Completed CHUMP 4-bit Computer</p>
                     </div>
                     <div className="landscape-container">
-                        <img src="/CHUMP/chump-diagram.jpg" alt="" className="w-[250px]"></img>
+                        <img src="/CHUMP/chump-diagram.jpg" alt="" className="w-[250px] mb-[1px]"></img>
                         <p>The CHUMP block diagram</p>
                     </div>
                 </div>
