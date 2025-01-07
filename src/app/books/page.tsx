@@ -9,6 +9,7 @@ export default function Projects() {
                 <ul className="list-disc pl-8 mb-8">
                     <li>The Almanack of Naval Ravikant - Eric Jorgenson</li>
                     <li>The War of Art - Steven Pressfield</li>
+                    <li>Crypto Confidential - Nathaniel Eliason</li>
                 </ul>
             </div>
         </MainWindow>

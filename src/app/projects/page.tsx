@@ -4,20 +4,59 @@ import Image from "next/image"
 export default function Projects() {
     return (
         <MainWindow>
-            {/* <h1 className="font-bold text-3xl mb-4">Current Projects</h1> */}
+            <h1 className="font-bold text-3xl mb-4">Currently Working On...</h1>
+            <div className="mb-6">
+                <div className="mb-2">
+                    <h2 className="font-bold text-xl">FentSnake - Training AI to Recreate Snake from Gameplay</h2>
+                    <p className="italic">January 2025</p>
+                    <ul className="list-disc pl-8">
+                        <li>Created the classic game Snake in Python.</li>
+                        <li>Currently learning about and using reinforcement learning to train an AI to play Snake.</li>
+                        <li>Next step is to record gameplay and key inputs from the AI, and then train a diffusion or auto-regression model to recreate the game frame by frame.</li>
+                        <li>Inspired by <a href="https://oasis.decart.ai">Oasis AI Minecraft</a> that generates Minecraft gameplay using a diffusion model.</li>
+                    </ul>
+                </div>
+            </div>
+            <div className="mb-6">
+                <div className="mb-2">
+                    <h2 className="font-bold text-xl">Hollo - A "Holographic" Interactable Display</h2>
+                    <p className="italic">September 2024</p>
+                    <ul className="list-disc pl-8">
+                        <li>
+                            Building a "Holographic" display that you can talk to. Uses the Pepper's Ghost technique to project the screen onto 
+                            a transparent surface, creating the illusion of a hologram. 
+                        </li>
+                        <li>
+                            Built a V1 prototype on a breadboard. Includes an avatar that you can talk to.
+                        </li>
+                        <li>
+                            Inspired by Bladerunner 2049.
+                        </li>
+                        <li>
+                            Got a $1000 USD <a href="https://www.1517fund.com/medici-project">1517 Medici Project</a> grant to develop the idea further (Thank you Danielle!).
+                        </li>
+                    </ul>
+                </div>
+                <div className="flex space-x-2 gap-y-2">
+                    <div className="landscape-container">
+                        <iframe className="landscape-media" src="https://youtube.com/embed/dC20uYRpbl4" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
+                        <p>V1 Prototype of Hollo</p>
+                    </div>
+                </div>
+            </div>
             <h1 className="font-bold text-3xl mb-4">Favourite Past Projects</h1>
             <div className="mb-6">
-                <div>
+                <div className="mb-2">
                     <h2 className="font-bold text-xl">Voice Assistant Camera Wearable</h2>
                     <p className="italic">June 2024</p>
                     <a href="https://github.com/xanderchinxyz/ESP32-CAM-Semantic-Search" target="_blank">Part 1 GitHub Repo</a> | <a href="https://github.com/xanderchinxyz/Voice-Assistant-Camera-Wearable" target="_blank">Part 2 GitHub Repo</a>
                     <ul className="list-disc pl-8">
-                        <li>Built a clip-on device to turn any pair of glasses into smart glasses with a voice assistant built with a XIAO ESP32 S3 Sense board. Originally started out as a separate device built with an ESP32-CAM and Muse 2 headset</li>
+                        <li>Built a clip-on device to turn any pair of glasses into smart glasses with a voice assistant built with a XIAO ESP32 S3 Sense board. Originally started out as a separate device built with an ESP32-CAM and Muse 2 headset.</li>
                         <li>Used a local multimodal large language model, Groq with RAG, and VOSK speech recognition model. First part only used text and image embeddings.</li>
                         <li>Inspired by Meta Raybans and <a href="https://github.com/BasedHardware/OpenGlass" target="_blank">OpenGlass</a>.</li>
                     </ul>
                 </div>
-                <div className="flex space-x-2">
+                <div className="flex space-x-2 gap-y-2">
                     <div className="portrait-container">
                         <iframe className="portrait-media"
                             src="https://www.youtube.com/embed/QoPYoWWtxFI"
@@ -44,27 +83,29 @@ export default function Projects() {
             </div>
 
             <div className="mb-6">
-                <h2 className="font-bold text-xl">Ping Pong LED Walls</h2>
-                <p className="italic">Mar 2024</p>
-                <a href="/DER.pdf#page=231" target="_blank">Part 1 Writeup</a> | <a href="/DER.pdf#page=275" target="_blank">Part 2 Writeup</a>
-                <ul className="list-disc pl-8">
-                    <li>
-                        Part 1 (Feb 2022): Built a lightweight LED Wall with 24 by 32 resolution. I designed the PCBs to be modular, lightweight and cheap
-                        as possible where I then painfully soldered them all. I also created a custom register level parallel bit-banging protocol for the nescessary speed to run it
-                        with an ATmega328P MCU without using a library. Made use of the Flash storage to display pictures, GIFs and cool patterns. 
-                    </li>
-                    <li>
-                        Part 2 (May 2022): Optimized my custom protocol by transitioning from register level code to assembly which can now display the camera output from a computer 
-                        and allow screen sharing and drawing. This is also facilitated through several Processing sketches and UART communication at 2
-                        million bits per second. I also stuck ping pong balls on top as diffusers!
-                    </li>
-                    <li>
-                        V2 (Mar 2024): Updated the previous Ping Pong LED Wall design to be a smaller and more modular IoT version with 3D printed clip on pieces, solderable connector PCBs, 
-                        and cool effects that can be controlled over Wi-Fi using the <a href="https://kno.wled.ge/" target="_blank">WLED app</a>.
-                    </li>
-                    <li>Inspired by <a href="https://youtu.be/EZEMK-C-nSo" target="_blank">Bitluni's Ping Pong LED Wall</a>.</li>
-                </ul>
-                <div className="flex flex-wrap">
+                <div className="mb-2">
+                    <h2 className="font-bold text-xl">Ping Pong LED Walls</h2>
+                    <p className="italic">Mar 2024</p>
+                    <a href="/DER.pdf#page=231" target="_blank">Part 1 Writeup</a> | <a href="/DER.pdf#page=275" target="_blank">Part 2 Writeup</a>
+                    <ul className="list-disc pl-8">
+                        <li>
+                            Part 1 (Feb 2022): Built a lightweight LED Wall with 24 by 32 resolution. I designed the PCBs to be modular, lightweight and cheap
+                            as possible where I then painfully soldered them all. I also created a custom register level parallel bit-banging protocol for the nescessary speed to run it
+                            with an ATmega328P MCU without using a library. Made use of the Flash storage to display pictures, GIFs and cool patterns. 
+                        </li>
+                        <li>
+                            Part 2 (May 2022): Optimized my custom protocol by transitioning from register level code to assembly which can now display the camera output from a computer 
+                            and allow screen sharing and drawing. This is also facilitated through several Processing sketches and UART communication at 2
+                            million bits per second. I also stuck ping pong balls on top as diffusers!
+                        </li>
+                        <li>
+                            V2 (Mar 2024): Updated the previous Ping Pong LED Wall design to be a smaller and more modular IoT version with 3D printed clip on pieces, solderable connector PCBs, 
+                            and cool effects that can be controlled over Wi-Fi using the <a href="https://kno.wled.ge/" target="_blank">WLED app</a>.
+                        </li>
+                        <li>Inspired by <a href="https://youtu.be/EZEMK-C-nSo" target="_blank">Bitluni's Ping Pong LED Wall</a>.</li>
+                    </ul>
+                </div>
+                <div className="flex flex-wrap gap-y-2">
                     <div className="portrait-container">
                         <iframe className="portrait-media"
                             src="https://www.youtube.com/embed/KHpbzdd8Qas"
@@ -107,22 +148,24 @@ export default function Projects() {
             </div>
 
             <div className="mb-6">
-                <h2 className="font-bold text-xl">EEG + EMG Measurement Device</h2>
-                <p className="italic">Dec 2021</p>
-                <a href="/DER.pdf#page=199" target="_blank">Writeup</a>
-                <ul className="list-disc pl-8">
-                    <li>
-                        Built a 2 channel electroencephalography (EEG) and electromyography (EMG) reader to "mind control" devices.
-                    </li>
-                    <li>
-                        Designed a PCB to amplify cognitive signals and attenuate noise, soldered SMT components, and wrote a Processing sketch to further filter the signal with an FFT algorithm and display the output.
-                    </li>
-                    <li>
-                        One channel was located by the pre-frontal lobe (Fp2) while the other channel was located by the occipital lobe (O1). 
-                        The reference channel was also located at the pre-frontal lobe (Fp1).
-                    </li>
-                </ul>
-                <div className="flex flex-wrap">
+                <div className="mb-2">
+                    <h2 className="font-bold text-xl">EEG + EMG Measurement Device</h2>
+                    <p className="italic">Dec 2021</p>
+                    <a href="/DER.pdf#page=199" target="_blank">Writeup</a>
+                    <ul className="list-disc pl-8">
+                        <li>
+                            Built a 2 channel electroencephalography (EEG) and electromyography (EMG) reader to "mind control" devices.
+                        </li>
+                        <li>
+                            Designed a PCB to amplify cognitive signals and attenuate noise, soldered SMT components, and wrote a Processing sketch to further filter the signal with an FFT algorithm and display the output.
+                        </li>
+                        <li>
+                            One channel was located by the pre-frontal lobe (Fp2) while the other channel was located by the occipital lobe (O1). 
+                            The reference channel was also located at the pre-frontal lobe (Fp1).
+                        </li>
+                    </ul>
+                </div>
+                <div className="flex flex-wrap gap-y-2">
                     <div className="landscape-container">
                         <iframe className="landscape-media" src="https://www.youtube.com/embed/Dr2lxEIa05U" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
                         <p>YouTube video demonstration + explanation</p>
@@ -151,22 +194,24 @@ export default function Projects() {
             </div>
 
             <div className="mb-6">
-                <h2 className="font-bold text-xl">Custom 4-Bit Computer (CHUMP)</h2>
-                <p className="italic">Nov 2021</p>
-                <a href="/DER.pdf#page=164" target="_blank">Part 1 Writeup</a> | <a href="/DER.pdf#page=175" target="_blank">Part 2 Writeup</a>
-                <ul className="list-disc pl-8">
-                    <li>
-                        Part 1: The beginning of a 4-bit breadboard computer called CHUMP (Cheap Homemade Understandable Minimal Processor). The first part goes over the custom "Chumpanese" code to
-                        program the computer, the adjustable clock circuit, and the counter circuit to keep track and execute the 
-                        current instruction.
-                    </li>
-                    <li>
-                        Part 2: The final custom 4-bit computer build from 1980's era TTL Integrated Circuits, coded in specific machine language. It executes 16 
-                        lines of code, capable of loading, adding, subtracting, storing, and reading memory, as well as
-                        a go-to command and conditional if zero commands.
-                    </li>
-                </ul>
-                <div className="flex flex-wrap">
+                <div className="mb-2">
+                    <h2 className="font-bold text-xl">Custom 4-Bit Computer (CHUMP)</h2>
+                    <p className="italic">Nov 2021</p>
+                    <a href="/DER.pdf#page=164" target="_blank">Part 1 Writeup</a> | <a href="/DER.pdf#page=175" target="_blank">Part 2 Writeup</a>
+                    <ul className="list-disc pl-8">
+                        <li>
+                            Part 1: The beginning of a 4-bit breadboard computer called CHUMP (Cheap Homemade Understandable Minimal Processor). The first part goes over the custom "Chumpanese" code to
+                            program the computer, the adjustable clock circuit, and the counter circuit to keep track and execute the 
+                            current instruction.
+                        </li>
+                        <li>
+                            Part 2: The final custom 4-bit computer build from 1980's era TTL Integrated Circuits, coded in specific machine language. It executes 16 
+                            lines of code, capable of loading, adding, subtracting, storing, and reading memory, as well as
+                            a go-to command and conditional if zero commands.
+                        </li>
+                    </ul>
+                </div>
+                <div className="flex flex-wrap gap-y-2">
                     <div className="landscape-container">
                         <iframe className="landscape-media" src="https://www.youtube.com/embed/b5qDwCN9Q2c" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
                         <p>Part 1 Video</p>
@@ -191,24 +236,26 @@ export default function Projects() {
             </div>
 
             <div className="mb-6">
-                <h2 className="font-bold text-xl">IR Nixie Clock</h2>
-                <p className="italic">May 2021</p>
-                <a href="/DER.pdf#page=132" target="_blank">Writeup</a>
-                <ul className="list-disc pl-8">
-                    <li>
-                        A 4-digit nixie tube clock with alarm, timer, date, and temperature features controlled with an infrared remote.
-                    </li>
-                    <li>
-                        Programmed in C++ on a standalone ATmega328 IC. Designed a custom PCB in EAGLE and laser-cut acrylic in Adobe Illustrator.
-                    </li>
-                    <li>
-                        Designed a custom boost converter from 5V to 170V to drive the nixie tubes.
-                    </li>
-                    <li>
-                        Inspired by Steins Gate :)
-                    </li>
-                </ul>
-                <div className="flex flex-wrap">
+                <div className="mb-2">
+                    <h2 className="font-bold text-xl">IR Nixie Clock</h2>
+                    <p className="italic">May 2021</p>
+                    <a href="/DER.pdf#page=132" target="_blank">Writeup</a>
+                    <ul className="list-disc pl-8">
+                        <li>
+                            A 4-digit nixie tube clock with alarm, timer, date, and temperature features controlled with an infrared remote.
+                        </li>
+                        <li>
+                            Programmed in C++ on a standalone ATmega328 IC. Designed a custom PCB in EAGLE and laser-cut acrylic in Adobe Illustrator.
+                        </li>
+                        <li>
+                            Designed a custom boost converter from 5V to 170V to drive the nixie tubes.
+                        </li>
+                        <li>
+                            Inspired by Steins Gate.
+                        </li>
+                    </ul>
+                </div>
+                <div className="flex flex-wrap gap-y-2">
                     <div className="landscape-container">
                         <iframe className="landscape-media" src="https://www.youtube.com/embed/nEOyhyJHx2M" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
                         <p>YouTube video demonstration + explanation</p>
@@ -229,24 +276,24 @@ export default function Projects() {
                         <img src="/Nixie_Clock/boost-converters.jpg" alt="" className="landscape-media"></img>
                         <p>My custom boost converter using the MAX1771 IC (left) and the commercialy available Taylor 1364 nixie power supply (right)</p>
                     </div>
-                    
                 </div>
-
             </div>
 
             <div className="mb-6">
-                <h2 className="font-bold text-xl">LiDAR Measurement and Mapping Device</h2>
-                <p className="italic">Mar 2021</p>
-                <a href="/DER.pdf#page=90" target="_blank">Writeup</a>
-                <ul className="list-disc pl-8">
-                    <li>
-                        A device that measures distance and models the surrounding room using LiDAR, servo motors, and an ESP32 programmed in C++.
-                    </li>
-                    <li>
-                        Coded a Processing program in Java to display a 3D point cloud, perform measurements, and control the ESP32 with Bluetooth.
-                    </li>
-                </ul>
-                <div className="flex flex-wrap">
+                <div className="mb-2">
+                    <h2 className="font-bold text-xl">LiDAR Measurement and Mapping Device</h2>
+                    <p className="italic">Mar 2021</p>
+                    <a href="/DER.pdf#page=90" target="_blank">Writeup</a>
+                    <ul className="list-disc pl-8">
+                        <li>
+                            A device that measures distance and models the surrounding room using LiDAR, servo motors, and an ESP32 programmed in C++.
+                        </li>
+                        <li>
+                            Coded a Processing program in Java to display a 3D point cloud, perform measurements, and control the ESP32 with Bluetooth.
+                        </li>
+                    </ul>
+                </div>
+                <div className="flex flex-wrap gap-y-2">
                     <div className="landscape-container">
                         <iframe className="landscape-media" src="https://www.youtube.com/embed/frzUmAhQT3E" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
                         <p>YouTube video demonstration + explanation</p>
