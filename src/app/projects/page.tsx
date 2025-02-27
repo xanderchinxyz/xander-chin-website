@@ -7,7 +7,7 @@ export default function Projects() {
             <h1 className="font-bold text-3xl mb-4">Currently Working On...</h1>
             <div className="mb-6">
                 <div className="mb-2">
-                    <h2 className="font-bold text-xl">FentSnake - Training AI to Recreate Snake from Gameplay</h2>
+                    <h2 className="font-bold text-xl">SnakeGAN - Training AI to Recreate Snake from Gameplay</h2>
                     <p className="italic">January 2025</p>
                     <ul className="list-disc pl-8">
                         <li>Created the classic game Snake in Python and used an RL agent to play it to record gameplay and key inputs.</li>
@@ -44,7 +44,11 @@ export default function Projects() {
                     </div>
                     <div className="landscape-container">
                         <video className="landscape-media" autoPlay muted loop><source src="PeppersGhost/touchdesigner.mp4" type="video/mp4"/></video>
-                        <p>Streaming TouchDesigner effects over WiFi</p>
+                        <p>Streaming TouchDesigner effects over Wi-Fi</p>
+                    </div>
+                    <div className="portrait-container">
+                        <video className="portrait-media" autoPlay muted loop><source src="PeppersGhost/without_enclosure.mp4" type="video/mp4"/></video>
+                        <p>Hollo without the enclosure</p>
                     </div>
                 </div>
             </div>
