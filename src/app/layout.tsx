@@ -10,7 +10,9 @@ const ogFont = localFont({
 
 const tinos = Tinos({
   weight: ['400', '700'],
-  subsets: ["cyrillic"]
+  subsets: ["latin", "cyrillic"], // Added "latin" for English characters
+  display: 'swap', // Add display:swap for better performance
+  variable: '--font-tinos', // Add a variable name for easier CSS usage
 })
 
 export const metadata: Metadata = {

@@ -10,9 +10,9 @@ export default function Projects() {
                     <h2 className="font-bold text-xl">FentSnake - Training AI to Recreate Snake from Gameplay</h2>
                     <p className="italic">January 2025</p>
                     <ul className="list-disc pl-8">
-                        <li>Created the classic game Snake in Python.</li>
-                        <li>Currently learning about and using reinforcement learning to train an AI to play Snake.</li>
-                        <li>Next step is to record gameplay and key inputs from the AI, and then train a diffusion or auto-regression model to recreate the game frame by frame.</li>
+                        <li>Created the classic game Snake in Python and used an RL agent to play it to record gameplay and key inputs.</li>
+                        <li>Currently training a GAN to recreate the dynamics and graphics of the game frame by frame.</li>
+                        <li>Reading up on the <a href="https://research.nvidia.com/labs/toronto-ai/GameGAN/">GameGAN</a> paper to implement LSTMs for better performance.</li>
                         <li>Inspired by <a href="https://oasis.decart.ai">Oasis AI Minecraft</a> that generates Minecraft gameplay using a diffusion model.</li>
                     </ul>
                 </div>
@@ -27,13 +27,13 @@ export default function Projects() {
                             a transparent surface, creating the illusion of a hologram. 
                         </li>
                         <li>
-                            Built a V1 prototype on a breadboard. Includes an avatar that you can talk to.
-                        </li>
-                        <li>
-                            Inspired by Bladerunner 2049.
+                            First built a V1 prototype on a breadboard which includes an avatar that you can talk to. Then I designed a 2-layer PCB which includes two ESP32 S3s that handle 50 fps video display, microphone input, and speaker output. Currently experimenting with TouchDesigner effects and improving the backend software for the AI assistant.
                         </li>
                         <li>
                             Got a $1000 USD <a href="https://www.1517fund.com/medici-project">1517 Medici Project</a> grant to develop the idea further (Thank you Danielle!).
+                        </li>
+                        <li>
+                            Inspired by Bladerunner 2049.
                         </li>
                     </ul>
                 </div>
@@ -41,6 +41,10 @@ export default function Projects() {
                     <div className="landscape-container">
                         <iframe className="landscape-media" src="https://youtube.com/embed/dC20uYRpbl4" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
                         <p>V1 Prototype of Hollo</p>
+                    </div>
+                    <div className="landscape-container">
+                        <video className="landscape-media" autoPlay muted loop><source src="PeppersGhost/touchdesigner.mp4" type="video/mp4"/></video>
+                        <p>Streaming TouchDesigner effects over WiFi</p>
                     </div>
                 </div>
             </div>
@@ -85,13 +89,13 @@ export default function Projects() {
             <div className="mb-6">
                 <div className="mb-2">
                     <h2 className="font-bold text-xl">Ping Pong LED Walls</h2>
-                    <p className="italic">Mar 2024</p>
+                    <p className="italic">March 2024</p>
                     <a href="/DER.pdf#page=231" target="_blank">Part 1 Writeup</a> | <a href="/DER.pdf#page=275" target="_blank">Part 2 Writeup</a>
                     <ul className="list-disc pl-8">
                         <li>
-                            Part 1 (Feb 2022): Built a lightweight LED Wall with 24 by 32 resolution. I designed the PCBs to be modular, lightweight and cheap
-                            as possible where I then painfully soldered them all. I also created a custom register level parallel bit-banging protocol for the nescessary speed to run it
-                            with an ATmega328P MCU without using a library. Made use of the Flash storage to display pictures, GIFs and cool patterns. 
+                            Part 1 (Feb 2022): Built a lightweight LED Wall with 24 by 32 resolution. I designed the PCBs to be as modular, lightweight, and cheap
+                            as possible where I then painfully soldered them all. I also created a custom register-level parallel bit-banging protocol for the necessary speed to run it
+                            with an ATmega328P MCU without using a library. Made use of the Flash storage to display pictures, GIFs, and cool patterns. 
                         </li>
                         <li>
                             Part 2 (May 2022): Optimized my custom protocol by transitioning from register level code to assembly which can now display the camera output from a computer 
@@ -99,7 +103,7 @@ export default function Projects() {
                             million bits per second. I also stuck ping pong balls on top as diffusers!
                         </li>
                         <li>
-                            V2 (Mar 2024): Updated the previous Ping Pong LED Wall design to be a smaller and more modular IoT version with 3D printed clip on pieces, solderable connector PCBs, 
+                            V2 (Mar 2024): Updated the previous Ping Pong LED Wall design to be a smaller and more modular IoT version with 3D printed clip-on pieces, solderable connector PCBs, 
                             and cool effects that can be controlled over Wi-Fi using the <a href="https://kno.wled.ge/" target="_blank">WLED app</a>.
                         </li>
                         <li>Inspired by <a href="https://youtu.be/EZEMK-C-nSo" target="_blank">Bitluni's Ping Pong LED Wall</a>.</li>
@@ -150,7 +154,7 @@ export default function Projects() {
             <div className="mb-6">
                 <div className="mb-2">
                     <h2 className="font-bold text-xl">EEG + EMG Measurement Device</h2>
-                    <p className="italic">Dec 2021</p>
+                    <p className="italic">December 2021</p>
                     <a href="/DER.pdf#page=199" target="_blank">Writeup</a>
                     <ul className="list-disc pl-8">
                         <li>
@@ -188,7 +192,7 @@ export default function Projects() {
                     </div>
                     <div className="w-[250px]">
                         <img src="/EEG_EMG/10-20-system.png" className="w-[250px]" alt=""/>
-                        <p>The 10-20 system used to place scalp electrodes for measuring EEG</p>
+                        <p>The 10-20 system for placing scalp electrodes to measure EEG</p>
                     </div>
                 </div>
             </div>
@@ -196,16 +200,16 @@ export default function Projects() {
             <div className="mb-6">
                 <div className="mb-2">
                     <h2 className="font-bold text-xl">Custom 4-Bit Computer (CHUMP)</h2>
-                    <p className="italic">Nov 2021</p>
+                    <p className="italic">November 2021</p>
                     <a href="/DER.pdf#page=164" target="_blank">Part 1 Writeup</a> | <a href="/DER.pdf#page=175" target="_blank">Part 2 Writeup</a>
                     <ul className="list-disc pl-8">
                         <li>
                             Part 1: The beginning of a 4-bit breadboard computer called CHUMP (Cheap Homemade Understandable Minimal Processor). The first part goes over the custom "Chumpanese" code to
-                            program the computer, the adjustable clock circuit, and the counter circuit to keep track and execute the 
+                            program the computer, the adjustable clock circuit, and the counter circuit to keep track of and execute the 
                             current instruction.
                         </li>
                         <li>
-                            Part 2: The final custom 4-bit computer build from 1980's era TTL Integrated Circuits, coded in specific machine language. It executes 16 
+                            Part 2: The final custom 4-bit computer built from 1980's era TTL Integrated Circuits, coded in specific machine language. It executes 16 
                             lines of code, capable of loading, adding, subtracting, storing, and reading memory, as well as
                             a go-to command and conditional if zero commands.
                         </li>
@@ -242,13 +246,13 @@ export default function Projects() {
                     <a href="/DER.pdf#page=132" target="_blank">Writeup</a>
                     <ul className="list-disc pl-8">
                         <li>
-                            A 4-digit nixie tube clock with alarm, timer, date, and temperature features controlled with an infrared remote.
+                            A 4-digit Nixie tube clock with alarm, timer, date, and temperature features controlled with an infrared remote.
                         </li>
                         <li>
                             Programmed in C++ on a standalone ATmega328 IC. Designed a custom PCB in EAGLE and laser-cut acrylic in Adobe Illustrator.
                         </li>
                         <li>
-                            Designed a custom boost converter from 5V to 170V to drive the nixie tubes.
+                            Designed a custom boost converter from 5V to 170V to drive the Nixie tubes.
                         </li>
                         <li>
                             Inspired by Steins Gate.
@@ -274,7 +278,7 @@ export default function Projects() {
                     </div>
                     <div className="landscape-container">
                         <img src="/Nixie_Clock/boost-converters.jpg" alt="" className="landscape-media"></img>
-                        <p>My custom boost converter using the MAX1771 IC (left) and the commercialy available Taylor 1364 nixie power supply (right)</p>
+                        <p>My custom boost converter using the MAX1771 IC (left) and the commercially available Taylor 1364 Nixie power supply (right)</p>
                     </div>
                 </div>
             </div>
@@ -282,7 +286,7 @@ export default function Projects() {
             <div className="mb-6">
                 <div className="mb-2">
                     <h2 className="font-bold text-xl">LiDAR Measurement and Mapping Device</h2>
-                    <p className="italic">Mar 2021</p>
+                    <p className="italic">March 2021</p>
                     <a href="/DER.pdf#page=90" target="_blank">Writeup</a>
                     <ul className="list-disc pl-8">
                         <li>

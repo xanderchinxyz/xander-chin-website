@@ -18,7 +18,7 @@ export default function Work() {
                     <li>
                         Received a USRI Award for the Summer of 2023. Designed an <a href="https://osf.io/erbyp/" className="underline">open-source packing algorithm</a> to tile 
                         as many building-integrated photovoltaics (BIPV) as possible on any arbitrarily shaped object or building. 
-                        This involved the use of complex packing algorithms, computational geometry, Python, and Blender. Culminated in a first author peer reviewed <a href="https://www.mdpi.com/3035648">paper publication in the Designs Journal</a>.
+                        This involved the use of complex packing algorithms, computational geometry, Python, and Blender. Culminated in a first author peer-reviewed <a href="https://www.mdpi.com/3035648">paper publication in the Designs Journal</a>.
                     </li>
                     <li>
                         Researched and developed a cheaper Recyclebot extruder that converts plastic pellets into 3D printer filament under the supervision of Dr. Joshua Pearce.
@@ -26,7 +26,7 @@ export default function Work() {
                 </ul>
             </div>
             <div className="mb-6">
-                <h2 className="font-bold text-xl">Machine Learning Consultant @ Condominum Authority of Ontario</h2>
+                <h2 className="font-bold text-xl">Machine Learning Consultant @ Condominium Authority of Ontario</h2>
                 <p className="italic">May 2024 - Aug 2024</p>
                 <ul className="list-disc pl-8">
                     <li>
@@ -46,7 +46,7 @@ export default function Work() {
                 </ul>
             </div>
             <div className="mb-6">
-                <h2 className="font-bold text-xl">Data Analyst Intern @ Condominum Authority of Ontario</h2>
+                <h2 className="font-bold text-xl">Data Analyst Intern @ Condominium Authority of Ontario</h2>
                 <p className="italic">Jun 2023 - Aug 2023 | Dec 2023 - Jan 2024</p>
                 <ul className="list-disc pl-8">
                     <li>
@@ -56,7 +56,7 @@ export default function Work() {
                         Performed data cleaning and extraction of survey responses using Python and Pandas.
                     </li>
                     <li>
-                        Created interactive maps and statistics of all Condominium Corporations in Ontario using Python, Pandas, Matplotlib and Excel.
+                        Created interactive maps and statistics of all Condominium Corporations in Ontario using Python, Pandas, Matplotlib, and Excel.
                     </li>
                 </ul>
             </div>

@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <MainWindow>
       <h1 className="font-bold text-3xl mb-4">Hi I'm Xander Chin</h1>
-      <p className="mb-2">I'm passionate about building things and sharing them on the internet using hardware, software, art and design.</p>
+      <p className="mb-2">I'm passionate about building things and sharing them on the internet using hardware, software, art, and design.</p>
       {/* <p>Currently working on:</p>
       <ul className="list-disc pl-8 mb-4">
         <li>A Pepper's Ghost Display that you can talk to</li>
@@ -14,14 +14,14 @@ export default function Home() {
       <h2>Currently:</h2>
       <ul className="list-disc pl-8 mb-4">
         <li>In my third year @ Western University studying Mechatronics and AI Engineering</li>
-        <li>Playing Jazz Guitar - I'm big fan of Joe Pass and Pat Metheney!</li>
-        <li>Rock climbing (working towards that V4), doing Calisthenics and Parkour</li>
+        <li>Playing Jazz Guitar - I'm a big fan of Joe Pass and Pat Metheney!</li>
+        <li>Doing Calisthenics and Parkour</li>
         <li>Posting my builds and progress on <a className="text-[#0000EE] underline" href="https://www.youtube.com/@xanderchinxyz" target="_blank">YouTube</a> and <a className="text-[#0000EE] underline" href="https://x.com/XanderChin" target="_blank">Twitter</a></li>
       </ul>
 
       <h2>I've previously:</h2>
       <ul className="list-disc pl-8 mb-4">
-        <li>Won a 100k scholarship to study Engineering @ Western University</li>
+        <li>Won a 100k Schulich Leader Scholarship to study Engineering @ Western University</li>
         <li>Written a <a className="text-[#0000EE] underline" href="/DER.pdf" target="_blank">250+ page portfolio</a> of my projects</li>
       </ul>
 
