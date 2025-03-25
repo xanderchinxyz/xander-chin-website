@@ -46,6 +46,12 @@ export default function Projects() {
                         <video className="landscape-media" autoPlay muted loop><source src="PeppersGhost/touchdesigner.mp4" type="video/mp4"/></video>
                         <p>Streaming TouchDesigner effects over Wi-Fi</p>
                     </div>
+                    <div className="landscape-container">
+                        <a href="https://x.com/XanderChin/status/1896306516044710024" target="_blank">
+                            <video className="landscape-media" autoPlay muted loop><source src="PeppersGhost/typing.mp4" type="video/mp4"/></video>
+                            <p>A cool typing effect I posted on Twitter that went viral</p>
+                        </a>
+                    </div>
                     <div className="portrait-container">
                         <video className="portrait-media" autoPlay muted loop><source src="PeppersGhost/without_enclosure.mp4" type="video/mp4"/></video>
                         <p>Hollo without the enclosure</p>
