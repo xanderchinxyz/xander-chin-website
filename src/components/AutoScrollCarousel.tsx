@@ -24,16 +24,24 @@ export default function AutoScrollCarousel({ children, speed = 50 }: AutoScrollC
 
     // Measure widths and calculate how many copies we need
     useEffect(() => {
+        let measureTimeout: NodeJS.Timeout | null = null;
+        
         const measure = () => {
             if (firstSetRef.current && containerRef.current) {
                 const contentWidth = firstSetRef.current.offsetWidth;
                 const containerWidth = containerRef.current.offsetWidth;
                 
+                // Guard against invalid measurements during scroll/layout shifts
+                if (contentWidth <= 0 || containerWidth <= 0) {
+                    return;
+                }
+                
                 // Only scroll if content is wider than container
                 if (contentWidth > containerWidth) {
                     const widthWithGap = contentWidth + 8; // +8 for gap
                     const neededCopies = Math.ceil(containerWidth / widthWithGap) + 2;
-                    setCopies(Math.max(2, neededCopies));
+                    // Cap at reasonable maximum to prevent memory issues
+                    setCopies(Math.min(Math.max(2, neededCopies), 10));
                     setSetWidth(widthWithGap);
                     setShouldScroll(true);
                 } else {
@@ -49,9 +57,15 @@ export default function AutoScrollCarousel({ children, speed = 50 }: AutoScrollC
                 }
             }
         };
+        
+        // Debounced measure to avoid rapid re-measurements
+        const debouncedMeasure = () => {
+            if (measureTimeout) clearTimeout(measureTimeout);
+            measureTimeout = setTimeout(measure, 50);
+        };
 
         measure();
-        window.addEventListener('resize', measure);
+        window.addEventListener('resize', debouncedMeasure);
         
         // Re-measure after images might have loaded
         const timeouts = [
@@ -61,8 +75,9 @@ export default function AutoScrollCarousel({ children, speed = 50 }: AutoScrollC
         ];
         
         return () => {
-            window.removeEventListener('resize', measure);
+            window.removeEventListener('resize', debouncedMeasure);
             timeouts.forEach(clearTimeout);
+            if (measureTimeout) clearTimeout(measureTimeout);
         };
     }, [children]);
 
@@ -72,8 +87,11 @@ export default function AutoScrollCarousel({ children, speed = 50 }: AutoScrollC
         if (!track || !shouldScroll || setWidth <= 0) return;
 
         let animationId: number;
+        let isRunning = true;
 
         const animate = (currentTime: number) => {
+            if (!isRunning) return;
+            
             if (lastTimeRef.current === 0) {
                 lastTimeRef.current = currentTime;
                 animationId = requestAnimationFrame(animate);
@@ -82,9 +100,20 @@ export default function AutoScrollCarousel({ children, speed = 50 }: AutoScrollC
 
             const deltaTime = (currentTime - lastTimeRef.current) / 1000;
             lastTimeRef.current = currentTime;
+            
+            // Guard against extreme deltaTime (e.g., tab was backgrounded)
+            if (deltaTime > 0.1) {
+                animationId = requestAnimationFrame(animate);
+                return;
+            }
 
             if (!isUserScrollingRef.current) {
                 positionRef.current += speed * deltaTime;
+
+                // Ensure position stays valid
+                if (!Number.isFinite(positionRef.current)) {
+                    positionRef.current = 0;
+                }
 
                 // Seamless reset using modulo
                 if (positionRef.current >= setWidth) {
@@ -100,6 +129,7 @@ export default function AutoScrollCarousel({ children, speed = 50 }: AutoScrollC
         animationId = requestAnimationFrame(animate);
 
         return () => {
+            isRunning = false;
             cancelAnimationFrame(animationId);
             lastTimeRef.current = 0;
         };
@@ -142,6 +172,7 @@ export default function AutoScrollCarousel({ children, speed = 50 }: AutoScrollC
     // Handle touch start
     const handleTouchStart = (e: React.TouchEvent) => {
         if (!shouldScroll) return;
+        if (!e.touches[0]) return; // Guard against missing touch data
         
         touchStartXRef.current = e.touches[0].clientX;
         touchStartYRef.current = e.touches[0].clientY;
@@ -152,11 +183,17 @@ export default function AutoScrollCarousel({ children, speed = 50 }: AutoScrollC
     // Handle touch move
     const handleTouchMove = (e: React.TouchEvent) => {
         if (!shouldScroll) return;
+        if (!e.touches[0]) return; // Guard against missing touch data
         
         const touchX = e.touches[0].clientX;
         const touchY = e.touches[0].clientY;
         const deltaX = touchStartXRef.current - touchX;
         const deltaY = touchStartYRef.current - touchY;
+
+        // Guard against NaN or extreme values
+        if (!Number.isFinite(deltaX) || !Number.isFinite(deltaY)) {
+            return;
+        }
 
         // Determine if this is a horizontal or vertical swipe
         // Only on first significant movement
@@ -165,8 +202,9 @@ export default function AutoScrollCarousel({ children, speed = 50 }: AutoScrollC
             if (Math.abs(deltaX) > Math.abs(deltaY)) {
                 isTouchScrollingRef.current = true;
             } else {
-                // Vertical scroll - let it pass through
+                // Vertical scroll - let it pass through completely
                 isUserScrollingRef.current = false;
+                isTouchScrollingRef.current = false;
                 return;
             }
         }
@@ -174,8 +212,11 @@ export default function AutoScrollCarousel({ children, speed = 50 }: AutoScrollC
         if (isTouchScrollingRef.current) {
             e.preventDefault();
             
-            positionRef.current += deltaX;
+            // Clamp deltaX to prevent extreme jumps
+            const clampedDelta = Math.max(-100, Math.min(100, deltaX));
+            positionRef.current += clampedDelta;
             touchStartXRef.current = touchX;
+            touchStartYRef.current = touchY;
             
             // Wrap around for infinite scroll
             if (setWidth > 0) {
