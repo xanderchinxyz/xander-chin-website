@@ -1,6 +1,7 @@
 import MainWindow from "@/components/MainWindow"
 import AutoScrollCarousel from "@/components/AutoScrollCarousel"
-import Image from "next/image"
+import LazyVideo from "@/components/LazyVideo"
+import LazyIframe from "@/components/LazyIframe"
 
 export default function Projects() {
     return (
@@ -31,33 +32,33 @@ export default function Projects() {
                 </div>
                 <div className="flex gap-x-2 mb-2">
                     <div className="landscape-container flex-shrink-0">
-                        <iframe className="landscape-media" src="https://youtube.com/embed/dC20uYRpbl4" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
+                        <LazyIframe className="landscape-media" src="https://youtube.com/embed/dC20uYRpbl4" title="YouTube video player" />
                         <p>V1 prototype of OpenGhost (previously called Hollo)</p>
                     </div>
                 </div>
                 <AutoScrollCarousel speed={30}>
                     <div className="portrait-container flex-shrink-0">
                         <a href="https://x.com/XanderChin/status/1988660086416548014" target="_blank">
-                            <video className="portrait-media" autoPlay muted loop><source src="PeppersGhost/hand_controlled_boids.mp4" type="video/mp4"/></video>
+                            <LazyVideo className="portrait-media" src="PeppersGhost/hand_controlled_boids.mp4" />
                             <p>Boids controlled using hand gestures that went viral on Twitter</p>
                         </a>
                     </div>
                     <div className="landscape-container flex-shrink-0">
-                        <video className="landscape-media" autoPlay muted loop><source src="PeppersGhost/touchdesigner.mp4" type="video/mp4"/></video>
+                        <LazyVideo className="landscape-media" src="PeppersGhost/touchdesigner.mp4" />
                         <p>Streaming TouchDesigner effects over Wi-Fi</p>
                     </div>
                     <div className="portrait-container flex-shrink-0">
-                        <video className="portrait-media" autoPlay muted loop><source src="PeppersGhost/lorenz_attractor.mp4" type="video/mp4"/></video>
+                        <LazyVideo className="portrait-media" src="PeppersGhost/lorenz_attractor.mp4" />
                         <p>Lorenz Attractor</p>
                     </div>
                     <div className="landscape-container flex-shrink-0">
                         <a href="https://x.com/XanderChin/status/1896306516044710024" target="_blank">
-                            <video className="landscape-media" autoPlay muted loop><source src="PeppersGhost/typing.mp4" type="video/mp4"/></video>
+                            <LazyVideo className="landscape-media" src="PeppersGhost/typing.mp4" />
                             <p>A cool typing effect I posted on Twitter that went viral</p>
                         </a>
                     </div>
                     <div className="portrait-container flex-shrink-0">
-                        <video className="portrait-media" autoPlay muted loop><source src="PeppersGhost/without_enclosure.mp4" type="video/mp4"/></video>
+                        <LazyVideo className="portrait-media" src="PeppersGhost/without_enclosure.mp4" />
                         <p>OpenGhost without the enclosure</p>
                     </div>
                 </AutoScrollCarousel>
@@ -75,21 +76,11 @@ export default function Projects() {
                 </div>
                 <AutoScrollCarousel speed={30}>
                 <div className="portrait-container flex-shrink-0">
-                        <iframe className="portrait-media"
-                            src="https://www.youtube.com/embed/QoPYoWWtxFI"
-                            title="YouTube video player"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            allowFullScreen>
-                        </iframe>
+                        <LazyIframe className="portrait-media" src="https://www.youtube.com/embed/QoPYoWWtxFI" title="YouTube video player" />
                         <p>Part 1 Video</p>
                     </div>
                     <div className="portrait-container flex-shrink-0">
-                        <iframe className="portrait-media"
-                            src="https://www.youtube.com/embed/sPIqjVPMnrE"
-                            title="YouTube video player"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            allowFullScreen>
-                        </iframe>
+                        <LazyIframe className="portrait-media" src="https://www.youtube.com/embed/sPIqjVPMnrE" title="YouTube video player" />
                         <p>Part 2 Video</p>
                     </div>
                     <div className="portrait-container flex-shrink-0">
@@ -124,34 +115,29 @@ export default function Projects() {
                 </div>
                 <div className="flex gap-x-2 mb-2 overflow-x-auto pb-2">
                     <div className="portrait-container flex-shrink-0">
-                        <iframe className="portrait-media"
-                            src="https://www.youtube.com/embed/KHpbzdd8Qas"
-                            title="YouTube video player"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            allowFullScreen>
-                        </iframe>
+                        <LazyIframe className="portrait-media" src="https://www.youtube.com/embed/KHpbzdd8Qas" title="YouTube video player" />
                         <p className="leading-none">V2 Video</p>
                     </div>
                     <div className="landscape-container flex-shrink-0">
-                        <iframe className="landscape-media" src="https://www.youtube.com/embed/1C1XGq-2Q_g" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
+                        <LazyIframe className="landscape-media" src="https://www.youtube.com/embed/1C1XGq-2Q_g" title="YouTube video player" />
                         <p>Part 2 Video</p>
                     </div>
                     <div className="landscape-container flex-shrink-0">
-                        <iframe className="landscape-media" src="https://www.youtube.com/embed/KatHkq3PDNg?&vq=hd1080" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
+                        <LazyIframe className="landscape-media" src="https://www.youtube.com/embed/KatHkq3PDNg?&vq=hd1080" title="YouTube video player" />
                         <p>Part 1 Video</p>
                     </div>
                 </div>
                 <AutoScrollCarousel speed={30}>
                     <div className="portrait-container flex-shrink-0">
-                        <video className="portrait-media" autoPlay muted loop><source src="PingPongLEDWall/v2-WLED.mp4" type="video/mp4"/></video>
+                        <LazyVideo className="portrait-media" src="PingPongLEDWall/v2-WLED.mp4" />
                         <p>V2 with WLED effects</p>
                     </div>
                     <div className="landscape-container flex-shrink-0">
-                        <video className="landscape-media" autoPlay muted loop><source src="PingPongLEDWall/rick-roll.mp4" type="video/mp4"/></video>
+                        <LazyVideo className="landscape-media" src="PingPongLEDWall/rick-roll.mp4" />
                         <p>LED Wall screen sharing</p>
                     </div>
                     <div className="landscape-container flex-shrink-0">
-                        <video className="landscape-media" autoPlay muted loop><source src="PingPongLEDWall/camera-output.mp4" type="video/mp4"/></video>
+                        <LazyVideo className="landscape-media" src="PingPongLEDWall/camera-output.mp4" />
                         <p>LED Wall camera output 👋</p>
                     </div>
                     <div className="landscape-container flex-shrink-0">
@@ -159,7 +145,7 @@ export default function Projects() {
                         <p>Nyan Cat GIF</p>
                     </div>
                     <div className="landscape-container flex-shrink-0">
-                        <video autoPlay muted loop className="landscape-media"><source src="PingPongLEDWall/lots-of-soldering.mp4" type="video/mp4"/></video>
+                        <LazyVideo className="landscape-media" src="PingPongLEDWall/lots-of-soldering.mp4" />
                         <p className="">Soldering each PCB and testing them (took forever)</p>
                     </div>
                 </AutoScrollCarousel>
@@ -185,13 +171,13 @@ export default function Projects() {
                 </div>
                 <div className="flex gap-x-2 mb-2">
                     <div className="landscape-container flex-shrink-0">
-                        <iframe className="landscape-media" src="https://www.youtube.com/embed/Dr2lxEIa05U" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
+                        <LazyIframe className="landscape-media" src="https://www.youtube.com/embed/Dr2lxEIa05U" title="YouTube video player" />
                         <p>YouTube video demonstration + explanation</p>
                     </div>
                 </div>
                 <AutoScrollCarousel speed={30}>
                     <div className="landscape-container flex-shrink-0">
-                        <video className="landscape-media" autoPlay muted loop><source src="EEG_EMG/alpha-waves.mp4" type="video/mp4"/></video>
+                        <LazyVideo className="landscape-media" src="EEG_EMG/alpha-waves.mp4" />
                         <p>Generating alpha waves when closing my eyes with a spike in the FFT spectrum at 8-14 Hz</p>
                     </div>
                     <div className="landscape-container flex-shrink-0">
@@ -233,11 +219,11 @@ export default function Projects() {
                 </div>
                 <div className="flex gap-x-2 mb-2 overflow-x-auto pb-2">
                     <div className="landscape-container flex-shrink-0">
-                        <iframe className="landscape-media" src="https://www.youtube.com/embed/b5qDwCN9Q2c" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
+                        <LazyIframe className="landscape-media" src="https://www.youtube.com/embed/b5qDwCN9Q2c" title="YouTube video player" />
                         <p>Part 1 Video</p>
                     </div>
                     <div className="landscape-container flex-shrink-0">
-                        <iframe className="landscape-media" src="https://www.youtube.com/embed/fg3poC2dT2o" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
+                        <LazyIframe className="landscape-media" src="https://www.youtube.com/embed/fg3poC2dT2o" title="YouTube video player" />
                         <p>Part 2 Video</p>
                     </div>
                 </div>
@@ -279,13 +265,13 @@ export default function Projects() {
                 </div>
                 <div className="flex gap-x-2 mb-2">
                     <div className="landscape-container flex-shrink-0">
-                        <iframe className="landscape-media" src="https://www.youtube.com/embed/nEOyhyJHx2M" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
+                        <LazyIframe className="landscape-media" src="https://www.youtube.com/embed/nEOyhyJHx2M" title="YouTube video player" />
                         <p>YouTube video demonstration + explanation</p>
                     </div>
                 </div>
                 <AutoScrollCarousel speed={30}>
                     <div className="landscape-container flex-shrink-0">
-                        <video className="landscape-media" autoPlay muted loop><source src="Nixie_Clock/cycling.mp4" type="video/mp4"/></video>
+                        <LazyVideo className="landscape-media" src="Nixie_Clock/cycling.mp4" />
                         <p>Periodically cycling the digits to prevent cathode poisoning (flicker is from driving the tubes with Persistence of Vision)</p>
                     </div>
                     <div className="landscape-container flex-shrink-0">
@@ -319,21 +305,21 @@ export default function Projects() {
                 </div>
                 <div className="flex gap-x-2 mb-2">
                     <div className="landscape-container flex-shrink-0">
-                        <iframe className="landscape-media" src="https://www.youtube.com/embed/frzUmAhQT3E" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
+                        <LazyIframe className="landscape-media" src="https://www.youtube.com/embed/frzUmAhQT3E" title="YouTube video player" />
                         <p>YouTube video demonstration + explanation</p>
                     </div>
                 </div>
                 <AutoScrollCarousel speed={30}>
                     <div className="landscape-container flex-shrink-0">
-                        <video className="landscape-media" autoPlay muted loop><source src="LiDAR/point-cloud.mp4" type="video/mp4"/></video>
+                        <LazyVideo className="landscape-media" src="LiDAR/point-cloud.mp4" />
                         <p>Generated 3D point cloud of some objects with some distance measurements</p>
                     </div>
                     <div className="landscape-container flex-shrink-0">
-                        <video className="landscape-media" autoPlay muted loop><source src="LiDAR/t-pose.mp4" type="video/mp4"/></video>
+                        <LazyVideo className="landscape-media" src="LiDAR/t-pose.mp4" />
                         <p>Generated a 3D point cloud of myself!</p>
                     </div>
                     <div className="landscape-container flex-shrink-0">
-                        <video className="landscape-media" autoPlay muted loop><source src="LiDAR/using-device.mp4" type="video/mp4"/></video>
+                        <LazyVideo className="landscape-media" src="LiDAR/using-device.mp4" />
                         <p>Starting a real-time scan to create a 3D point cloud</p>
                     </div>
                     <div className="landscape-container flex-shrink-0">
