@@ -25,7 +25,6 @@ export default function LazyVideo({
 }: LazyVideoProps) {
     const videoRef = useRef<HTMLVideoElement>(null);
     const [isVisible, setIsVisible] = useState(false);
-    const [hasLoaded, setHasLoaded] = useState(false);
 
     useEffect(() => {
         const video = videoRef.current;
@@ -41,7 +40,7 @@ export default function LazyVideo({
                 });
             },
             {
-                rootMargin: "200px", // Start loading 200px before visible
+                rootMargin: "200px",
                 threshold: 0,
             }
         );
@@ -53,22 +52,37 @@ export default function LazyVideo({
         };
     }, []);
 
+    // Handle video loading and playback when visible
     useEffect(() => {
-        if (isVisible && videoRef.current && !hasLoaded) {
-            setHasLoaded(true);
-            if (autoPlay) {
-                videoRef.current.play().catch(() => {
+        const video = videoRef.current;
+        if (!isVisible || !video) return;
+
+        // Set src directly on video element (works better on iOS than <source>)
+        video.src = src;
+        
+        // iOS requires load() to be called after setting src
+        video.load();
+
+        if (autoPlay) {
+            // Wait for video to be ready before playing
+            const handleCanPlay = () => {
+                video.play().catch(() => {
                     // Autoplay might be blocked, that's okay
                 });
-            }
+            };
+
+            video.addEventListener("canplay", handleCanPlay, { once: true });
+            
+            return () => {
+                video.removeEventListener("canplay", handleCanPlay);
+            };
         }
-    }, [isVisible, autoPlay, hasLoaded]);
+    }, [isVisible, src, autoPlay]);
 
     return (
         <video
             ref={videoRef}
             className={className}
-            autoPlay={false}
             muted={muted}
             loop={loop}
             playsInline
@@ -76,8 +90,6 @@ export default function LazyVideo({
             poster={poster}
             width={width}
             height={height}
-        >
-            {isVisible && <source src={src} type="video/mp4" />}
-        </video>
+        />
     );
 }
