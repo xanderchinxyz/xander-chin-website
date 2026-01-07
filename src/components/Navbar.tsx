@@ -15,7 +15,6 @@ export default function Navbar() {
                 <Link href="/projects" className="navlink">Projects</Link>
                 <Link href="/work" className="navlink">Work</Link>
                 <Link href="https://devpost.com/xander-chin" target="_blank" className="navlink">Hackathons</Link>
-                <Link href="/books" className="navlink">Fun Corner</Link>
                 {/* <Link href="" className="">RESUME</Link> */}
             </div>
             <hr className="h-full border-[1px] border-black md:mr-8 mb-4"/>

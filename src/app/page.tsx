@@ -13,19 +13,13 @@ export default function Home() {
       </ul> */}
       <h2>Currently:</h2>
       <ul className="list-disc pl-8 mb-4">
-        <li>In my third year @ Western University studying Mechatronics and AI Engineering</li>
+        <li>In my fourth year @ Western University studying Mechatronics Engineering</li>
         <li>Playing Jazz Guitar - I'm a big fan of Joe Pass and Pat Metheney!</li>
         <li>Doing Calisthenics and Parkour</li>
         <li>Posting my builds and progress on <a className="text-[#0000EE] underline" href="https://www.youtube.com/@xanderchinxyz" target="_blank">YouTube</a> and <a className="text-[#0000EE] underline" href="https://x.com/XanderChin" target="_blank">Twitter</a></li>
       </ul>
 
-      <h2>I've previously:</h2>
-      <ul className="list-disc pl-8 mb-4">
-        <li>Won a 100k Schulich Leader Scholarship to study Engineering @ Western University</li>
-        <li>Written a <a className="text-[#0000EE] underline" href="/DER.pdf" target="_blank">250+ page portfolio</a> of my projects</li>
-      </ul>
-
-      <p className="mb-8">Reach out to me at: xanderchin@gmail.com !</p>
+      <p className="mb-8">Reach out to me at: xanderchin@gmail.com</p>
 
       <div className="flex space-x-10 md:justify-start">
         <a href="https://www.youtube.com/@xanderchinxyz" target="_blank">
@@ -44,6 +38,8 @@ export default function Home() {
           <svg className="text-gray-300 transition hover:text-black fill-current w-8 h-8" viewBox="0 0 24 24"><path d="M6.002 1.61 0 12.004 6.002 22.39h11.996L24 12.004 17.998 1.61zm1.593 4.084h3.947c3.605 0 6.276 1.695 6.276 6.31 0 4.436-3.21 6.302-6.456 6.302H7.595zm2.517 2.449v7.714h1.241c2.646 0 3.862-1.55 3.862-3.861.009-2.569-1.096-3.853-3.767-3.853z"/></svg>
         </a>
       </div>
+      <p className="mt-8">Website inspired by: <a className="text-[#0000EE] underline" href="https://hudzah.com" target="_blank">hudzah.com</a></p>
+
     </MainWindow>
   );
 }

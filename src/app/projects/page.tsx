@@ -1,64 +1,67 @@
 import MainWindow from "@/components/MainWindow"
+import AutoScrollCarousel from "@/components/AutoScrollCarousel"
 import Image from "next/image"
 
 export default function Projects() {
     return (
         <MainWindow>
-            <h1 className="font-bold text-3xl mb-4">Currently Working On...</h1>
             <div className="mb-6">
                 <div className="mb-2">
-                    <h2 className="font-bold text-xl">SnakeGAN - Training AI to Recreate Snake from Gameplay</h2>
-                    <p className="italic">January 2025</p>
-                    <ul className="list-disc pl-8">
-                        <li>Created the classic game Snake in Python and used an RL agent to play it to record gameplay and key inputs.</li>
-                        <li>Currently training a GAN to recreate the dynamics and graphics of the game frame by frame.</li>
-                        <li>Reading up on the <a href="https://research.nvidia.com/labs/toronto-ai/GameGAN/">GameGAN</a> paper to implement LSTMs for better performance.</li>
-                        <li>Inspired by <a href="https://oasis.decart.ai">Oasis AI Minecraft</a> that generates Minecraft gameplay using a diffusion model.</li>
-                    </ul>
-                </div>
-            </div>
-            <div className="mb-6">
-                <div className="mb-2">
-                    <h2 className="font-bold text-xl">Hollo - A "Holographic" Interactable Display</h2>
+                    <h2 className="font-bold text-xl">OpenGhost - An Open-Source and Aesthetic Display</h2>
                     <p className="italic">September 2024</p>
+                    <a href="https://github.com/xanderchinxyz/OpenGhost" target="_blank">GitHub Repo</a>
                     <ul className="list-disc pl-8">
                         <li>
-                            Building a "Holographic" display that you can talk to. Uses the Pepper's Ghost technique to project the screen onto 
+                            Built an aesthetic, open-source, and interactive display. Uses the Pepper's Ghost technique to project the screen onto 
                             a transparent surface, creating the illusion of a hologram. 
                         </li>
                         <li>
-                            First built a V1 prototype on a breadboard which includes an avatar that you can talk to. Then I designed a 2-layer PCB which includes two ESP32 S3s that handle 50 fps video display, microphone input, and speaker output. Currently experimenting with TouchDesigner effects and improving the backend software for the AI assistant.
+                            First built a V1 prototype on a breadboard which includes an avatar that you can talk to. Then I designed a 2-layer PCB which includes two ESP32 S3s that handle 50 fps video display, microphone input, and speaker output.
+                        </li>
+                        <li>
+                            Made a much larger version over the summer of 2025 using a Raspberry Pi 5, Raspberry Pi camera, and a custom 3D printed enclosure. I'm continually making cool effects and interactive programs on it!
                         </li>
                         <li>
                             Got a $1000 USD <a href="https://www.1517fund.com/medici-project">1517 Medici Project</a> grant to develop the idea further (Thank you Danielle!).
                         </li>
                         <li>
-                            Inspired by Bladerunner 2049.
+                            Inspired by the holographic displays in Bladerunner 2049 and Iron Man.
                         </li>
                     </ul>
                 </div>
-                <div className="flex space-x-2 gap-y-2">
-                    <div className="landscape-container">
+                <div className="flex gap-x-2 mb-2">
+                    <div className="landscape-container flex-shrink-0">
                         <iframe className="landscape-media" src="https://youtube.com/embed/dC20uYRpbl4" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
-                        <p>V1 Prototype of Hollo</p>
+                        <p>V1 prototype of OpenGhost (previously called Hollo)</p>
                     </div>
-                    <div className="landscape-container">
+                </div>
+                <AutoScrollCarousel speed={30}>
+                    <div className="portrait-container flex-shrink-0">
+                        <a href="https://x.com/XanderChin/status/1988660086416548014" target="_blank">
+                            <video className="portrait-media" autoPlay muted loop><source src="PeppersGhost/hand_controlled_boids.mp4" type="video/mp4"/></video>
+                            <p>Boids controlled using hand gestures that went viral on Twitter</p>
+                        </a>
+                    </div>
+                    <div className="landscape-container flex-shrink-0">
                         <video className="landscape-media" autoPlay muted loop><source src="PeppersGhost/touchdesigner.mp4" type="video/mp4"/></video>
                         <p>Streaming TouchDesigner effects over Wi-Fi</p>
                     </div>
-                    <div className="landscape-container">
+                    <div className="portrait-container flex-shrink-0">
+                        <video className="portrait-media" autoPlay muted loop><source src="PeppersGhost/lorenz_attractor.mp4" type="video/mp4"/></video>
+                        <p>Lorenz Attractor</p>
+                    </div>
+                    <div className="landscape-container flex-shrink-0">
                         <a href="https://x.com/XanderChin/status/1896306516044710024" target="_blank">
                             <video className="landscape-media" autoPlay muted loop><source src="PeppersGhost/typing.mp4" type="video/mp4"/></video>
                             <p>A cool typing effect I posted on Twitter that went viral</p>
                         </a>
                     </div>
-                    <div className="portrait-container">
+                    <div className="portrait-container flex-shrink-0">
                         <video className="portrait-media" autoPlay muted loop><source src="PeppersGhost/without_enclosure.mp4" type="video/mp4"/></video>
-                        <p>Hollo without the enclosure</p>
+                        <p>OpenGhost without the enclosure</p>
                     </div>
-                </div>
+                </AutoScrollCarousel>
             </div>
-            <h1 className="font-bold text-3xl mb-4">Favourite Past Projects</h1>
             <div className="mb-6">
                 <div className="mb-2">
                     <h2 className="font-bold text-xl">Voice Assistant Camera Wearable</h2>
@@ -70,8 +73,8 @@ export default function Projects() {
                         <li>Inspired by Meta Raybans and <a href="https://github.com/BasedHardware/OpenGlass" target="_blank">OpenGlass</a>.</li>
                     </ul>
                 </div>
-                <div className="flex space-x-2 gap-y-2">
-                    <div className="portrait-container">
+                <AutoScrollCarousel speed={30}>
+                <div className="portrait-container flex-shrink-0">
                         <iframe className="portrait-media"
                             src="https://www.youtube.com/embed/QoPYoWWtxFI"
                             title="YouTube video player"
@@ -80,7 +83,7 @@ export default function Projects() {
                         </iframe>
                         <p>Part 1 Video</p>
                     </div>
-                    <div className="portrait-container">
+                    <div className="portrait-container flex-shrink-0">
                         <iframe className="portrait-media"
                             src="https://www.youtube.com/embed/sPIqjVPMnrE"
                             title="YouTube video player"
@@ -89,11 +92,11 @@ export default function Projects() {
                         </iframe>
                         <p>Part 2 Video</p>
                     </div>
-                    <div className="portrait-container">
+                    <div className="portrait-container flex-shrink-0">
                         <img src="/Voice_Assistant_Camera_Wearable/first-version.jpg" className="portrait-media" alt=""/>
                         <p>Wearing the first version</p>
                     </div>
-                </div>
+                </AutoScrollCarousel>
             </div>
 
             <div className="mb-6">
@@ -119,8 +122,8 @@ export default function Projects() {
                         <li>Inspired by <a href="https://youtu.be/EZEMK-C-nSo" target="_blank">Bitluni's Ping Pong LED Wall</a>.</li>
                     </ul>
                 </div>
-                <div className="flex flex-wrap gap-y-2">
-                    <div className="portrait-container">
+                <div className="flex gap-x-2 mb-2 overflow-x-auto pb-2">
+                    <div className="portrait-container flex-shrink-0">
                         <iframe className="portrait-media"
                             src="https://www.youtube.com/embed/KHpbzdd8Qas"
                             title="YouTube video player"
@@ -129,36 +132,37 @@ export default function Projects() {
                         </iframe>
                         <p className="leading-none">V2 Video</p>
                     </div>
-                    <div className="portrait-container">
-                        <video className="portrait-media" autoPlay muted loop><source src="PingPongLEDWall/v2-WLED.mp4" type="video/mp4"/></video>
-                        <p>V2 with WLED effects</p>
-                    </div>
-                    <div className="landscape-container">
+                    <div className="landscape-container flex-shrink-0">
                         <iframe className="landscape-media" src="https://www.youtube.com/embed/1C1XGq-2Q_g" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
                         <p>Part 2 Video</p>
                     </div>
-                    <div className="landscape-container">
+                    <div className="landscape-container flex-shrink-0">
                         <iframe className="landscape-media" src="https://www.youtube.com/embed/KatHkq3PDNg?&vq=hd1080" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
                         <p>Part 1 Video</p>
                     </div>
-                    <div className="landscape-container">
+                </div>
+                <AutoScrollCarousel speed={30}>
+                    <div className="portrait-container flex-shrink-0">
+                        <video className="portrait-media" autoPlay muted loop><source src="PingPongLEDWall/v2-WLED.mp4" type="video/mp4"/></video>
+                        <p>V2 with WLED effects</p>
+                    </div>
+                    <div className="landscape-container flex-shrink-0">
                         <video className="landscape-media" autoPlay muted loop><source src="PingPongLEDWall/rick-roll.mp4" type="video/mp4"/></video>
                         <p>LED Wall screen sharing</p>
                     </div>
-                    <div className="landscape-container">
+                    <div className="landscape-container flex-shrink-0">
                         <video className="landscape-media" autoPlay muted loop><source src="PingPongLEDWall/camera-output.mp4" type="video/mp4"/></video>
                         <p>LED Wall camera output 👋</p>
                     </div>
-                    <div className="landscape-container">
+                    <div className="landscape-container flex-shrink-0">
                         <img src="/PingPongLEDWall/nyan-cat.gif" className="landscape-media" alt=""/>
                         <p>Nyan Cat GIF</p>
                     </div>
-                    <div className="landscape-container">
+                    <div className="landscape-container flex-shrink-0">
                         <video autoPlay muted loop className="landscape-media"><source src="PingPongLEDWall/lots-of-soldering.mp4" type="video/mp4"/></video>
                         <p className="">Soldering each PCB and testing them (took forever)</p>
                     </div>
-                    
-                </div>
+                </AutoScrollCarousel>
             </div>
 
             <div className="mb-6">
@@ -179,32 +183,34 @@ export default function Projects() {
                         </li>
                     </ul>
                 </div>
-                <div className="flex flex-wrap gap-y-2">
-                    <div className="landscape-container">
+                <div className="flex gap-x-2 mb-2">
+                    <div className="landscape-container flex-shrink-0">
                         <iframe className="landscape-media" src="https://www.youtube.com/embed/Dr2lxEIa05U" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
                         <p>YouTube video demonstration + explanation</p>
                     </div>
-                    <div className="landscape-container">
+                </div>
+                <AutoScrollCarousel speed={30}>
+                    <div className="landscape-container flex-shrink-0">
                         <video className="landscape-media" autoPlay muted loop><source src="EEG_EMG/alpha-waves.mp4" type="video/mp4"/></video>
                         <p>Generating alpha waves when closing my eyes with a spike in the FFT spectrum at 8-14 Hz</p>
                     </div>
-                    <div className="landscape-container">
+                    <div className="landscape-container flex-shrink-0">
                         <img src="/EEG_EMG/eeg-device.jpg" className="landscape-media" alt=""/>
                         <p>The PCB Board (first time using SMT components!)</p>
                     </div>
-                    <div className="landscape-container">
+                    <div className="landscape-container flex-shrink-0">
                         <img src="/EEG_EMG/reflow-oven.png" className="landscape-media" alt=""/>
                         <p>Baking the SMT components with a toaster oven repurposed as a reflow oven</p>
                     </div>
-                    <div className=" md:w-[450px] w-[300px]">
+                    <div className="md:w-[450px] w-[300px] flex-shrink-0">
                         <img src="/EEG_EMG/eeg-circuit-diagram.jpg" className="md:w-[450px] w-[300px]" alt=""/>
                         <p>The circuit block diagram</p>
                     </div>
-                    <div className="w-[250px]">
+                    <div className="w-[250px] flex-shrink-0">
                         <img src="/EEG_EMG/10-20-system.png" className="w-[250px]" alt=""/>
                         <p>The 10-20 system for placing scalp electrodes to measure EEG</p>
                     </div>
-                </div>
+                </AutoScrollCarousel>
             </div>
 
             <div className="mb-6">
@@ -225,28 +231,30 @@ export default function Projects() {
                         </li>
                     </ul>
                 </div>
-                <div className="flex flex-wrap gap-y-2">
-                    <div className="landscape-container">
+                <div className="flex gap-x-2 mb-2 overflow-x-auto pb-2">
+                    <div className="landscape-container flex-shrink-0">
                         <iframe className="landscape-media" src="https://www.youtube.com/embed/b5qDwCN9Q2c" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
                         <p>Part 1 Video</p>
                     </div>
-                    <div className="landscape-container">
+                    <div className="landscape-container flex-shrink-0">
                         <iframe className="landscape-media" src="https://www.youtube.com/embed/fg3poC2dT2o" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
                         <p>Part 2 Video</p>
                     </div>
-                    <div className="landscape-container">
+                </div>
+                <AutoScrollCarousel speed={30}>
+                    <div className="landscape-container flex-shrink-0">
                         <img src="/CHUMP/code-clock-counter.jpg" alt="" className="w-[400px] mb-[1px]"></img>
                         <p>The Code (stored in the EEPROM Program), Clock (555 timers) and Program Counter (PC) sections</p>
                     </div>
-                    <div className="landscape-container">
+                    <div className="landscape-container flex-shrink-0">
                         <img src="/CHUMP/complete-chump.jpg" alt="" className="w-[400px] mb-[1px]"></img>
                         <p>The Completed CHUMP 4-bit Computer</p>
                     </div>
-                    <div className="landscape-container">
+                    <div className="landscape-container flex-shrink-0">
                         <img src="/CHUMP/chump-diagram.jpg" alt="" className="w-[250px] mb-[1px]"></img>
                         <p>The CHUMP block diagram</p>
                     </div>
-                </div>
+                </AutoScrollCarousel>
             </div>
 
             <div className="mb-6">
@@ -269,28 +277,30 @@ export default function Projects() {
                         </li>
                     </ul>
                 </div>
-                <div className="flex flex-wrap gap-y-2">
-                    <div className="landscape-container">
+                <div className="flex gap-x-2 mb-2">
+                    <div className="landscape-container flex-shrink-0">
                         <iframe className="landscape-media" src="https://www.youtube.com/embed/nEOyhyJHx2M" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
                         <p>YouTube video demonstration + explanation</p>
                     </div>
-                    <div className="landscape-container">
+                </div>
+                <AutoScrollCarousel speed={30}>
+                    <div className="landscape-container flex-shrink-0">
                         <video className="landscape-media" autoPlay muted loop><source src="Nixie_Clock/cycling.mp4" type="video/mp4"/></video>
                         <p>Periodically cycling the digits to prevent cathode poisoning (flicker is from driving the tubes with Persistence of Vision)</p>
                     </div>
-                    <div className="landscape-container">
+                    <div className="landscape-container flex-shrink-0">
                         <img src="/Nixie_Clock/back-pcb.jpg" alt="" className="landscape-media"></img>
                         <p>The back PCB containing all the circuitry and sensors</p>
                     </div>
-                    <div className="landscape-container">
+                    <div className="landscape-container flex-shrink-0">
                         <img src="/Nixie_Clock/pcb-sandwich.jpg" alt="" className="landscape-media"></img>
                         <p>PCB sandwich connecting the display PCB to the back PCB</p>
                     </div>
-                    <div className="landscape-container">
+                    <div className="landscape-container flex-shrink-0">
                         <img src="/Nixie_Clock/boost-converters.jpg" alt="" className="landscape-media"></img>
                         <p>My custom boost converter using the MAX1771 IC (left) and the commercially available Taylor 1364 Nixie power supply (right)</p>
                     </div>
-                </div>
+                </AutoScrollCarousel>
             </div>
 
             <div className="mb-6">
@@ -307,28 +317,30 @@ export default function Projects() {
                         </li>
                     </ul>
                 </div>
-                <div className="flex flex-wrap gap-y-2">
-                    <div className="landscape-container">
+                <div className="flex gap-x-2 mb-2">
+                    <div className="landscape-container flex-shrink-0">
                         <iframe className="landscape-media" src="https://www.youtube.com/embed/frzUmAhQT3E" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
                         <p>YouTube video demonstration + explanation</p>
                     </div>
-                    <div className="landscape-container">
+                </div>
+                <AutoScrollCarousel speed={30}>
+                    <div className="landscape-container flex-shrink-0">
                         <video className="landscape-media" autoPlay muted loop><source src="LiDAR/point-cloud.mp4" type="video/mp4"/></video>
                         <p>Generated 3D point cloud of some objects with some distance measurements</p>
                     </div>
-                    <div className="landscape-container">
+                    <div className="landscape-container flex-shrink-0">
                         <video className="landscape-media" autoPlay muted loop><source src="LiDAR/t-pose.mp4" type="video/mp4"/></video>
                         <p>Generated a 3D point cloud of myself!</p>
                     </div>
-                    <div className="landscape-container">
+                    <div className="landscape-container flex-shrink-0">
                         <video className="landscape-media" autoPlay muted loop><source src="LiDAR/using-device.mp4" type="video/mp4"/></video>
                         <p>Starting a real-time scan to create a 3D point cloud</p>
                     </div>
-                    <div className="landscape-container">
+                    <div className="landscape-container flex-shrink-0">
                         <img src="LiDAR/device.jpg" alt="" className="w-[400px] mb-[1px]"></img>
                         <p>The LiDAR Measurement Device consisting of the control unit and LiDAR unit</p>
                     </div>
-                </div>
+                </AutoScrollCarousel>
             </div>
 
             {/* <h1 className="font-bold text-3xl mb-4">Other Projects</h1>
