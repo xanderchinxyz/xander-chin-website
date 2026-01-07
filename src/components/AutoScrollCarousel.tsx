@@ -15,6 +15,9 @@ export default function AutoScrollCarousel({ children, speed = 50 }: AutoScrollC
     const userScrollTimeout = useRef<NodeJS.Timeout | null>(null);
     const positionRef = useRef<number>(0);
     const lastTimeRef = useRef<number>(0);
+    const touchStartXRef = useRef<number>(0);
+    const touchStartYRef = useRef<number>(0);
+    const isTouchScrollingRef = useRef(false);
     const [setWidth, setSetWidth] = useState(0);
     const [copies, setCopies] = useState(1);
     const [shouldScroll, setShouldScroll] = useState(false);
@@ -136,6 +139,62 @@ export default function AutoScrollCarousel({ children, speed = 50 }: AutoScrollC
         }
     };
 
+    // Handle touch start
+    const handleTouchStart = (e: React.TouchEvent) => {
+        if (!shouldScroll) return;
+        
+        touchStartXRef.current = e.touches[0].clientX;
+        touchStartYRef.current = e.touches[0].clientY;
+        isTouchScrollingRef.current = false;
+        isUserScrollingRef.current = true;
+    };
+
+    // Handle touch move
+    const handleTouchMove = (e: React.TouchEvent) => {
+        if (!shouldScroll) return;
+        
+        const touchX = e.touches[0].clientX;
+        const touchY = e.touches[0].clientY;
+        const deltaX = touchStartXRef.current - touchX;
+        const deltaY = touchStartYRef.current - touchY;
+
+        // Determine if this is a horizontal or vertical swipe
+        // Only on first significant movement
+        if (!isTouchScrollingRef.current && (Math.abs(deltaX) > 5 || Math.abs(deltaY) > 5)) {
+            // If more horizontal than vertical, handle it
+            if (Math.abs(deltaX) > Math.abs(deltaY)) {
+                isTouchScrollingRef.current = true;
+            } else {
+                // Vertical scroll - let it pass through
+                isUserScrollingRef.current = false;
+                return;
+            }
+        }
+
+        if (isTouchScrollingRef.current) {
+            e.preventDefault();
+            
+            positionRef.current += deltaX;
+            touchStartXRef.current = touchX;
+            
+            // Wrap around for infinite scroll
+            if (setWidth > 0) {
+                positionRef.current = ((positionRef.current % setWidth) + setWidth) % setWidth;
+            }
+            
+            if (trackRef.current) {
+                trackRef.current.style.transform = `translate3d(${-positionRef.current}px, 0, 0)`;
+            }
+        }
+    };
+
+    // Handle touch end
+    const handleTouchEnd = () => {
+        if (!shouldScroll) return;
+        isTouchScrollingRef.current = false;
+        pauseAutoScroll();
+    };
+
     // Generate the required number of copies
     const renderCopies = () => {
         const elements = [];
@@ -156,10 +215,11 @@ export default function AutoScrollCarousel({ children, speed = 50 }: AutoScrollC
     return (
         <div
             ref={containerRef}
-            className="overflow-hidden"
+            className="overflow-hidden touch-pan-y"
             onWheel={handleWheel}
-            onTouchStart={() => { if (shouldScroll) isUserScrollingRef.current = true; }}
-            onTouchEnd={() => { if (shouldScroll) pauseAutoScroll(); }}
+            onTouchStart={handleTouchStart}
+            onTouchMove={handleTouchMove}
+            onTouchEnd={handleTouchEnd}
             onMouseDown={() => { if (shouldScroll) isUserScrollingRef.current = true; }}
             onMouseUp={() => { if (shouldScroll) pauseAutoScroll(); }}
         >
