@@ -6,7 +6,7 @@ import LazyIframe from "@/components/LazyIframe"
 export default function Projects() {
     return (
         <MainWindow>
-            <div className="mb-6">
+            <div className="mb-8">
                 <div className="mb-2">
                     <h2 className="font-bold text-xl">OpenGhost - An Open-Source and Aesthetic Display</h2>
                     <p className="italic">September 2024</p>
@@ -63,7 +63,7 @@ export default function Projects() {
                     </div>
                 </AutoScrollCarousel>
             </div>
-            <div className="mb-6">
+            <div className="mb-8">
                 <div className="mb-2">
                     <h2 className="font-bold text-xl">Voice Assistant Camera Wearable</h2>
                     <p className="italic">June 2024</p>
@@ -90,7 +90,7 @@ export default function Projects() {
                 </AutoScrollCarousel>
             </div>
 
-            <div className="mb-6">
+            <div className="mb-8">
                 <div className="mb-2">
                     <h2 className="font-bold text-xl">Ping Pong LED Walls</h2>
                     <p className="italic">March 2024</p>
@@ -151,7 +151,7 @@ export default function Projects() {
                 </AutoScrollCarousel>
             </div>
 
-            <div className="mb-6">
+            <div className="mb-8">
                 <div className="mb-2">
                     <h2 className="font-bold text-xl">EEG + EMG Measurement Device</h2>
                     <p className="italic">December 2021</p>
@@ -199,7 +199,7 @@ export default function Projects() {
                 </AutoScrollCarousel>
             </div>
 
-            <div className="mb-6">
+            <div className="mb-8">
                 <div className="mb-2">
                     <h2 className="font-bold text-xl">Custom 4-Bit Computer (CHUMP)</h2>
                     <p className="italic">November 2021</p>
@@ -243,7 +243,7 @@ export default function Projects() {
                 </AutoScrollCarousel>
             </div>
 
-            <div className="mb-6">
+            <div className="mb-8">
                 <div className="mb-2">
                     <h2 className="font-bold text-xl">IR Nixie Clock</h2>
                     <p className="italic">May 2021</p>
@@ -289,7 +289,7 @@ export default function Projects() {
                 </AutoScrollCarousel>
             </div>
 
-            <div className="mb-6">
+            <div className="mb-8">
                 <div className="mb-2">
                     <h2 className="font-bold text-xl">LiDAR Measurement and Mapping Device</h2>
                     <p className="italic">March 2021</p>

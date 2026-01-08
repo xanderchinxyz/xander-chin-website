@@ -12,6 +12,7 @@ export default function Navbar() {
                     className="rounded-full aspect-square object-cover w-[50px] md:w-auto h-[50px] md:h-auto"
                 />      
                 <Link href="/" className="navlink">Home</Link>
+                <Link href="/writing" className="navlink">Writing</Link>
                 <Link href="/projects" className="navlink">Projects</Link>
                 <Link href="/work" className="navlink">Work</Link>
                 <Link href="https://devpost.com/xander-chin" target="_blank" className="navlink">Hackathons</Link>
